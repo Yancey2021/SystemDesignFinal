@@ -26,7 +26,7 @@ def addrec():
             cur = conn.cursor()
             cur.execute(cmd)
             conn.commit()
-            msg = "Reservation Successfully Completed. Reserved the following: {0}, {1}, {2}, {3}"
+            msg = "Reservation Successfully Completed. Reserved the following:" print({0}, {1}, {2}, {3}) #trying to use user input 
             return render_template("confirm.htm", msg = msg) 
 
 @app.route("/list")
