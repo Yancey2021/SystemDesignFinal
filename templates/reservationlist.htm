@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+   <body>
+      {% extends "bootstrap/base.html" %}
+
+      {% block content %}
+
+
+      <table class="table table-striped table-bordered">
+         <thead class="table">
+            <td>Name</td>
+            <td>CheckInDate</td>
+            <td>CheckOutDate</td>
+            <td>RoomType</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr class="bg-info">
+               <td>{{row["name"]}}</td>
+               <td>{{row["CheckInDate"]}}</td>
+               <td> {{row["CheckOutDate"]}}</td>
+               <td>{{row['RoomType']}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+      {% endblock %}    
+      
+      <a href = "/">Go back to home page</a>
+   </body>
+</html>
