@@ -11,7 +11,6 @@ def home():
 
 @app.route("/enterinfo/")
 def new_reservation():
-    # return render_template("reservation.htm", nm=nm, CheckInDate=CheckInDate, CheckOutDate=CheckOutDate, RoomType=RoomType) 
     return render_template("reservation.htm")
 
 @app.route("/addrec", methods = ["POST", "GET"])
