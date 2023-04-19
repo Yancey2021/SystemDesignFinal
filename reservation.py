@@ -9,8 +9,9 @@ Bootstrap(app)
 def home(): 
     return render_template("welcome.htm")
 
-@app.route("/enterinfo")
+@app.route("/enterinfo/")
 def new_reservation():
+    # return render_template("reservation.htm", nm=nm, CheckInDate=CheckInDate, CheckOutDate=CheckOutDate, RoomType=RoomType) 
     return render_template("reservation.htm")
 
 @app.route("/addrec", methods = ["POST", "GET"])
@@ -26,7 +27,7 @@ def addrec():
             cur = conn.cursor()
             cur.execute(cmd)
             conn.commit()
-            msg = "Reservation Successfully Completed. Reserved the following:" print({0}, {1}, {2}, {3}) #trying to use user input 
+            msg = "Dear {0}, Your reservation from {1} to {2} in a {3} was successfully completed. ".format(nm, CheckInDate, CheckOutDate, RoomType)   
             return render_template("confirm.htm", msg = msg) 
 
 @app.route("/list")
